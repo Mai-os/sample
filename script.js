@@ -1,22 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // 予約ボタンを取得
-    var button = document.getElementById("button");
-
-    // ボタンがクリックされた時の処理
-    button.addEventListener("click", function() {
-        // bodyの背景色をランダムに変更する
-        document.body.style.backgroundColor = getRandomColor();
-    });
-
-    // ランダムな色を生成する関数
-    function getRandomColor() {
-        var letters = "0123456789ABCDEF";
-        var color = "#";
-        for (var i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
+    var cls = document.getElementById("button");
+    if (cls) {
+        cls.addEventListener("click", function() {
+            var text = document.getElementById("text");
+            if (text) {
+                text.style.color = "blue";
+            } else {
+                console.error("textが見つかりません。");
+            }
+        });
+    } else {
+        console.error("buttonが見つかりません。");
     }
-
-    console.log("JavaScriptが動作しています");
 });
