@@ -1,9 +1,23 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var cls = document.getElementById("button");
-    cls.addEventListener("click", () => {
+    var button = document.getElementById("button");
+
+    button.addEventListener("click", function() {
+        // ボタンがクリックされると、文字の色をランダムに変更する
         var text = document.getElementById("text");
-        text.style.color = "blue";  // クリック時に文字色を青に変更
+        
+        // 色をランダムで選ぶ関数
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // 色を変更
+        text.style.color = getRandomColor();
     });
 
-    console.log(cls);  // 正しくbutton要素が取得できているか確認
+    console.log("JavaScriptが動作しています");
 });
