@@ -1,6 +1,6 @@
 // let isDefaultColor = true;
 
-var cls = document.getElementById("btn");
+var cls = document.getElementById("button");
 cls.addEventListener("click", () => {
     var text = document.getElementById("text")
     text.style.color = "blue";
